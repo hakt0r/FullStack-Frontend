@@ -4,9 +4,13 @@ import './App.css';
 function App() {
   const [ apiReady, setApiReady ] = useState(false);
   useEffect( async () => {
-    const response = await fetch('/api/test');
-    const data     = await response.json();
-    setApiReady(true);
+    try {
+      const response = await fetch('/api/test');
+      const data     = await response.json();
+      setApiReady(true);
+    } catch (error) {
+      alert(error);
+    }
   },[]);
 
   return apiReady ? "Connected" : "Connecting...";
