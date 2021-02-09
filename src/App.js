@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { FaBeer } from "@react-icons/all-files/fa/FaBeer";
 import './App.css';
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
   },[]);
 
   
-  return apiReady ? "Connected" : "Connecting...";
+  return apiReady ? <b>"Connected"</b> : <><FaBeer/>Connecting</>;
 }
 
 export default App;
